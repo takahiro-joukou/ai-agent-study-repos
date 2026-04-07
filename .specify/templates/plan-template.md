@@ -9,6 +9,10 @@
 
 [Extract from feature spec: primary requirement + technical approach from research]
 
+## Architecture
+
+本 feature は docs/architecture/overview.md に準拠する。
+
 ## Technical Context
 
 <!--
