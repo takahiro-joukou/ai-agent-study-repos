@@ -1,23 +1,23 @@
-# Spec-Driven Development Sample Constitution
+# Spec-Driven Development Sample プロジェクト憲法
 
-## Core Principles
+## 基本原則
 
-### I. Spec-Driven Development
+### I. 仕様駆動開発
 仕様駆動開発を採用。すべての実装は spec → plan → tasks → implement の順を厳守する。
 
-### II. REST API Focus
+### II. REST API 提供
 REST API 機能を提供。画面 UI は不要。
 
-### III. Readability Priority
+### III. 可読性最優先
 可読性を最優先とする。
 
-### IV. Minimize Side Effects
+### IV. 副作用の最小化
 副作用は最小化する。
 
-### V. Testable Design
+### V. テスト容易な設計
 単体テストを書きやすい設計を優先する。
 
-### VI. Performance Optimization
+### VI. パフォーマンス最適化
 パフォーマンス最適化は要件化された場合のみ実施する。
 
 ## Governance
