@@ -20,21 +20,10 @@ REST API 機能を提供。画面 UI は不要。
 ### VI. Performance Optimization
 パフォーマンス最適化は要件化された場合のみ実施する。
 
-## Technical Constraints
-
-**技術スタック**: REST API を提供する言語/フレームワーク。
-**UI**: 画面 UI は不要。
-**品質基準**: 可読性優先、副作用最小化、テスト容易性。
-
-## Development Workflow
-
-**プロセス**: spec → plan → tasks → implement の順を厳守。
-**レビュー**: 各フェーズで仕様との整合性を確認。
-**テスト**: 単体テストを優先し、統合テストは必要に応じて。
-
 ## Governance
 
-憲法はすべての実践に優先する。修正はドキュメント化、承認、移行計画を必要とする。
-バージョン管理: MAJOR.MINOR.PATCH 形式。MAJOR: 破壊的変更、MINOR: 新原則追加、PATCH: 明確化。
+- 憲法はすべての実践に優先する。
+- 修正はドキュメント化、承認、移行計画を必要とする。
+- バージョン管理: MAJOR.MINOR.PATCH 形式。MAJOR: 破壊的変更、MINOR: 新原則追加、PATCH: 明確化。
 
 **Version**: 1.0.0 | **Ratified**: 2026-04-07 | **Last Amended**: 2026-04-07
