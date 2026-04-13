@@ -1,4 +1,4 @@
-# Feature Specification: Employee List Retrieval
+# 機能仕様: 従業員一覧取得
 
 **Feature Branch**: `001-list-employees`  
 **Created**: 2026-04-13  
@@ -7,86 +7,86 @@
 
 ## User Scenarios & Testing *(mandatory)*
 
-### User Story 1 - Retrieve employee list (Priority: P1)
+### User Story 1 - 従業員一覧を取得する (Priority: P1)
 
-A human resources staff member or administrator needs to request the current employee roster so they can review registered employee records.
+人事担当者または管理者が、登録済みの従業員情報を確認するために最新の従業員一覧を要求する必要があります。
 
-**Why this priority**: This is the primary business need: authorized staff must be able to see the current employee list without changing data.
+**Why this priority**: これは主要な業務要件であり、権限のある担当者がデータを変更せずに現在の従業員一覧を閲覧できることが必要です。
 
-**Independent Test**: As an authorized actor, request the employee list and verify the system returns a list of employees with required employee details.
+**Independent Test**: 権限のあるアクターとして従業員一覧を要求し、システムが必要な従業員詳細を含む一覧を返すことを確認します。
 
 **Acceptance Scenarios**:
 
-1. **Given** an authorized actor and one or more registered employees, **When** the actor requests the employee list, **Then** the system returns the employee roster including employee number, name, department, title, and employment status.
-2. **Given** the employee list is returned, **When** the actor views the results, **Then** the list is ordered by employee number in dictionary order.
+1. **Given** 権限のあるアクターと1件以上の登録済み従業員が存在する場合、**When** アクターが従業員一覧を要求すると、**Then** システムは従業員番号、氏名、所属部署、役職、在籍ステータスを含む従業員名簿を返します。
+2. **Given** 従業員一覧が返されたとき、**When** アクターが結果を確認すると、**Then** 一覧は従業員番号の辞書順に並んでいます。
 
 ---
 
-### User Story 2 - Handle empty employee roster (Priority: P2)
+### User Story 2 - 従業員が存在しない場合の対応 (Priority: P2)
 
-An authorized actor needs a clear response when no employees are available so they understand that no records exist.
+権限のあるアクターは、従業員が存在しない場合にその状況が明確に伝えられる必要があります。
 
-**Why this priority**: The system must communicate the empty state clearly to avoid confusion when no employee records are registered.
+**Why this priority**: 登録済み従業員がない場合に混乱を避けるため、システムは空状態を明確に伝える必要があります。
 
-**Independent Test**: Request the employee list when no records exist and verify the system returns an explicit no-employees message.
+**Independent Test**: 従業員が1件も登録されていない状態で従業員一覧を要求し、システムが従業員が存在しないことを明示するメッセージを返すことを確認します。
 
 **Acceptance Scenarios**:
 
-1. **Given** an authorized actor and no registered employees, **When** the actor requests the employee list, **Then** the system responds with a message stating that no employees are available for display.
+1. **Given** 権限のあるアクターで登録済み従業員が存在しない場合、**When** アクターが従業員一覧を要求すると、**Then** システムは表示する従業員が存在しないことを示すメッセージを返します。
 
 ---
 
-### User Story 3 - Deny unauthorized access (Priority: P3)
+### User Story 3 - 権限のないアクセスを拒否する (Priority: P3)
 
-A user without sufficient permissions must be prevented from viewing the employee list with a clear authorization message.
+十分な権限を持たないユーザーは、従業員一覧の閲覧ができず、明確な権限エラーメッセージが表示される必要があります。
 
-**Why this priority**: Protecting employee data and enforcing role-based access is essential even for a read-only feature.
+**Why this priority**: 読み取り専用機能でも従業員データを保護し、役割ベースのアクセス制御を適用することが重要です。
 
-**Independent Test**: Attempt to request the employee list as an unauthorized actor and verify the system returns a permission denied response.
+**Independent Test**: 権限のないアクターとして従業員一覧を要求し、システムが権限拒否の応答を返すことを確認します。
 
 **Acceptance Scenarios**:
 
-1. **Given** an actor without administrator or HR permissions, **When** the actor requests the employee list, **Then** the system responds with a message stating that they do not have permission to retrieve the employee list.
+1. **Given** 管理者または人事担当の権限を持たないアクターが存在する場合、**When** アクターが従業員一覧を要求すると、**Then** システムは従業員一覧を取得する権限がない旨のメッセージを返します。
 
 ---
 
 ### Edge Cases
 
-- When employee records are present but some optional fields are missing, the list still returns available fields without failing.
-- When the employee list retrieval operation fails due to a transient error, the system returns a user-friendly error message and allows retry.
-- When a large number of employees exists, the system still returns the roster in employee number dictionary order.
+- 従業員レコードが存在するが一部の任意項目が欠損している場合でも、利用可能な項目を返し、処理に失敗しないこと。
+- 一時的なエラーにより従業員一覧の取得に失敗した場合、ユーザーにわかりやすいエラーメッセージを表示し、再試行の案内を提供すること。
+- 大量の従業員が存在する場合でも、従業員番号の辞書順で名簿を返すこと。
 
 ## Requirements *(mandatory)*
 
 ### Functional Requirements
 
-- **FR-001**: System MUST retrieve the current list of registered employees for authorized actors.
-- **FR-002**: System MUST only allow actors with administrator or HR permissions to request the employee list.
-- **FR-003**: System MUST include the following fields for each returned employee: employee number, name, department, title, and employment status.
-- **FR-004**: System MUST return the employee list ordered by employee number in dictionary order.
-- **FR-005**: System MUST display a friendly empty-state message when no employees are available.
-- **FR-006**: System MUST display a clear authorization error message when an unauthorized actor requests the employee list.
-- **FR-007**: System MUST display a clear error message and retry guidance if employee list retrieval fails for any other reason.
+- **FR-001**: システムは、権限のあるアクターのために現在登録されている従業員の一覧を取得できること。
+- **FR-002**: システムは、管理者または人事担当の権限を持つアクターのみが従業員一覧を要求できるようにすること。
+- **FR-003**: システムは、返却する各従業員について従業員番号、氏名、所属部署、役職、在籍ステータスを含めること。
+- **FR-004**: システムは、従業員一覧を従業員番号の辞書順に並べて返すこと。
+- **FR-005**: システムは、従業員が存在しない場合に親しみやすい空状態メッセージを表示すること。
+- **FR-006**: システムは、権限のないアクターが従業員一覧を要求した場合に明確な権限エラーメッセージを表示すること。
+- **FR-007**: システムは、従業員一覧の取得がその他の理由で失敗した場合に、明確なエラーメッセージと再試行案内を表示すること。
 
 ### Key Entities *(include if feature involves data)*
 
-- **Employee**: Represents a registered employee record, including employee number, name, department, title, and employment status.
-- **Employee List**: Represents the collection of employee records returned by the system to an authorized actor.
-- **Authorized Actor**: Represents a user with administrator or HR permissions who may request the employee list.
+- **Employee**: 従業員番号、氏名、所属部署、役職、在籍ステータスを含む登録済み従業員レコードを表します。
+- **Employee List**: 権限のあるアクターに返される従業員レコードの集合を表します。
+- **Authorized Actor**: 従業員一覧を要求できる管理者または人事担当の権限を持つユーザーを表します。
 
 ## Success Criteria *(mandatory)*
 
 ### Measurable Outcomes
 
-- **SC-001**: Authorized actors can retrieve the employee list and view employee records within two interactions from the starting point.
-- **SC-002**: When employees exist, the system returns the list with employee number, name, department, title, and employment status in dictionary order by employee number.
-- **SC-003**: When no employee records are available, the system shows a distinct message that no employees are available.
-- **SC-004**: When an unauthorized actor requests the list, the system shows a clear permission denied message.
-- **SC-005**: When retrieval fails due to an error, the system shows a user-friendly error message and suggests retrying.
+- **SC-001**: 権限のあるアクターが従業員一覧を取得し、従業員レコードを閲覧できること。
+- **SC-002**: 従業員が存在する場合、システムは従業員番号、氏名、所属部署、役職、在籍ステータスを従業員番号の辞書順で返すこと。
+- **SC-003**: 従業員レコードが存在しない場合、システムは従業員が利用可能でないことを明確に示すメッセージを表示すること。
+- **SC-004**: 権限のないアクターが一覧を要求した場合、システムは明確な権限拒否メッセージを表示すること。
+- **SC-005**: 取得がエラーで失敗した場合、システムはユーザーにわかりやすいエラーメッセージを表示し、再試行を示唆すること。
 
 ## Assumptions
 
-- The feature is limited to read-only employee list retrieval and does not include create, update, or delete operations.
-- Authentication and authorization are provided by the existing application environment and are not part of this feature's implementation.
-- The employee list request is expected to return a manageable number of records in a single response for the first iteration.
-- Sorting by employee number in dictionary order is sufficient for the expected business use case.
+- この機能は、読み取り専用の従業員一覧取得に限定され、作成・更新・削除操作は含まれません。
+- 認証と認可は既存のアプリケーション環境で提供され、この機能の実装範囲には含まれません。
+- 従業員一覧要求は、最初のイテレーションでは1回の応答で管理可能な件数のレコードを返すことを想定しています。
+- 従業員番号の辞書順でのソートで、想定される業務要件に対して十分であると見なします。

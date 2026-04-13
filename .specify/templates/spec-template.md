@@ -1,4 +1,4 @@
-# Feature Specification: [FEATURE NAME]
+# 機能仕様: [FEATURE NAME]
 
 **Feature Branch**: `[###-feature-name]`  
 **Created**: [DATE]  
