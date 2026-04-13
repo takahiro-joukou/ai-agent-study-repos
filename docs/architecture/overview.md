@@ -48,4 +48,7 @@ UI（HTML / JavaScript 等）は提供せず、REST API として機能を公開
 [ In-Memory RDB (Persistent) ]
 
 ## 4. データモデル
-docs/data-model/data-model.md を参照すること。
+docs/architecture/data-model.md を参照すること。
+
+## 5. API 規約
+docs/architecture/api/*.md を参照すること。
