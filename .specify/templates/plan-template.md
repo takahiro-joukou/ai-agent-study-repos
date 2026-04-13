@@ -11,7 +11,7 @@
 
 ## Architecture
 
-本 feature は docs/architecture/overview.md に準拠する。
+全体アーキテクチャは docs/architecture/overview.md を参照すること。
 
 ## Technical Context
 

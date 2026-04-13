@@ -1,6 +1,6 @@
 # 機能仕様: 従業員一覧取得
 
-**Feature Branch**: `001-list-employees`  
+**Feature Branch**: `feature/001-list-employees`  
 **Created**: 2026-04-13  
 **Status**: Draft  
 **Input**: User description: "従業員の一覧を取得する仕様を生成してください。"
