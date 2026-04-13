@@ -9,6 +9,10 @@
 
 [Extract from feature spec: primary requirement + technical approach from research]
 
+## Architecture
+
+本 feature は docs/architecture/overview.md に準拠する。
+
 ## Technical Context
 
 <!--
@@ -31,7 +35,12 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- Spec-Driven Development: spec → plan → tasks → implement の順を厳守。
+- REST API Focus: 機能が REST API であることを確認。
+- Readability Priority: 設計が可読性を考慮。
+- Minimize Side Effects: 副作用を最小化。
+- Testable Design: 単体テスト容易性を優先。
+- Performance Optimization: 要件化された場合のみ。
 
 ## Project Structure
 
