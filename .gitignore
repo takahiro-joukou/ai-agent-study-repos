@@ -1,0 +1,22 @@
+# Gradle
+.gradle/
+build/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# H2 database files
+*.h2.db
+*.trace.db
+data/
+
+# Temporary files
+*.tmp
+*.swp
+
+# Generated files
+out/
