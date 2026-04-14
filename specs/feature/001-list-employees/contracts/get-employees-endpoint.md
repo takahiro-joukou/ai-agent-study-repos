@@ -33,8 +33,7 @@
       "title": "課長",
       "employmentStatus": "在籍"
     }
-  ],
-  "message": "現在、登録された従業員は存在しません。"
+  ]
 }
 ```
 
